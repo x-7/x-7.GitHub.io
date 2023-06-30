@@ -1,4 +1,4 @@
-# rlm 'get ethernet address' bug
+# rlm 'get ethernet address' bug： Wrong host for license (-4) Can't get ethernet address (-114): syserr: -19
 
 ## bug描述
   -  当license mac地址所在的网卡接口的ifindex>4999时rlm客户端so库）无法正常checkout license，抛出如下异常信息：
