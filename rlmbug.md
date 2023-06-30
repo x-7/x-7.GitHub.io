@@ -15,6 +15,7 @@
     - 创建容器的过程会创建network interface，因为network interface的ifindex的分配时递增的，所以最终ifindex会大于4999。
     宿主机和容器的ifindex的值分配都是有宿主机操作系统统一分配的。
     这里使用2500是因为创建一个容器ifindex会增加2，因为容器内和宿主机上各增加一个网络interface
+
 ```bash
 for ((i=1; i<=2500; i++))
 do
@@ -24,6 +25,7 @@ done
 echo "over"
 
 ```
+
 - 运行一个容器执行license chekout脚本(这里使用python调用rlm客户端so库)，此时的容器里的eth0的ifindex是大于4999的，所以license checkout 会报错
 
 ```
